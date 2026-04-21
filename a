@@ -1,2 +1,14 @@
 #!/bin/bash
-curl -L tailscale.com/install.sh |sh
+curl -O https://raw.githubusercontent.com/rcaloras/bash-preexec/master/bash-preexec.sh
+
+cat <<-EOF >> ~/.bashrc
+    [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+    source ~/.bashrc.local
+    export PATH="$HOME/.arkade/bin:$PATH"
+EOF
+
+curl -L get.arkade.dev |sudo sh
+arkade get atuin starship
+
+~/.arkade/bin/starship init bash >>~/.bashrc.local
+~/.arkade/bin/atuin init bash >>~/.bashrc.local
