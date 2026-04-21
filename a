@@ -6,6 +6,6 @@ cat <<-EOF >>~/.bashrc
 	source ~/.bashrc.local
 EOF
 curl -L get.arkade.dev |sudo sh  
-arkade get starship atuin
+arkade get starship atuin gh croc
 ~/.arkade/bin/atuin init bash >>~/.bashrc.local
 ~/.arkade/bin/starship init bash >>~/.bashrc.local
