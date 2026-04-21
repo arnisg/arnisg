@@ -1,8 +1,0 @@
-curl https://raw.githubusercontent.com/rcaloras/bash-preexec/master/bash-preexec.sh -o ~/.bash-preexec.sh
-echo '[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh' >> ~/.bashrc
-
-curl -L get.arkade.dev |sudo sh
-arkade get atuin starship
-
-~/.arkade/bin/starship init bash >>~/.bashrc.local
-~/.arkade/bin/atuin init bash >>~/.bashrc.local
