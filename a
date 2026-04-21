@@ -1,9 +1,9 @@
 curl https://raw.githubusercontent.com/rcaloras/bash-preexec/master/bash-preexec.sh -o ~/.bash-preexec.sh
 
 cat <<-EOF >> ~/.bashrc
-    [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
-    source ~/.bashrc.local
-    export PATH="$HOME/.arkade/bin:$PATH"
+[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+source ~/.bashrc.local
+export PATH="$HOME/.arkade/bin:$PATH"
 EOF
 
 curl -L get.arkade.dev |sudo sh
