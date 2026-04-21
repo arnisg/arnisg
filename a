@@ -9,4 +9,3 @@ curl -L get.arkade.dev |sudo sh
 arkade get starship atuin
 ~/.arkade/bin/atuin init bash >>~/.bashrc.local
 ~/.arkade/bin/starship init bash >>~/.bashrc.local
-source ~/.bashrc
