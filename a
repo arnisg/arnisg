@@ -1,10 +1,5 @@
-curl 'https://raw.githubusercontent.com/rcaloras/bash-preexec/master/bash-preexec.sh' -o ~/.bash-preexec.sh
-
-cat <<-EOF >> ~/.bashrc
-[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
-source ~/.bashrc.local
-export PATH="$HOME/.arkade/bin:$PATH"
-EOF
+curl https://raw.githubusercontent.com/rcaloras/bash-preexec/master/bash-preexec.sh -o ~/.bash-preexec.sh
+echo '[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh' >> ~/.bashrc
 
 curl -L get.arkade.dev |sudo sh
 arkade get atuin starship
