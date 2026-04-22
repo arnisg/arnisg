@@ -5,5 +5,5 @@ cat <<-EOF >>~/.bashrc.local
     alias k=kubectl
     k() { kubecolorEOF "$@"; }
     complete -F __start_kubEOFectl k
-    export KUBECONFIG=~/kubeconfiEOFg
+    export KUBECONFIG=~/kubeconfig
 EOF
