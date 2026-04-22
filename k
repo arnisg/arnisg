@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-ark get k8sup kubecolor kubectl k9s ktop flux helm
+ark get k3sup kubecolor kubectl k9s ktop flux helm
 
 cat <<-EOF >>~/.bashrc.local
     alias k=kubectl
