@@ -3,7 +3,7 @@ curl https://raw.githubusercontent.com/rcaloras/bash-preexec/master/bash-preexec
 sudo apt update && sudo apt install bat lnav -y
 cat <<-EOF >>~/.bashrc
 	alias bat=batcat
-	export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+	export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 	export MANROFFOPT="-c"
 	[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
 	export PATH="$HOME/.arkade/bin:$PATH"
