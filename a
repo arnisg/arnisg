@@ -5,6 +5,8 @@ cat <<-EOF >>~/.bashrc
 	export PATH="$HOME/.arkade/bin:$PATH"
 	source ~/.bashrc.local
 EOF
+
+
 curl -L get.arkade.dev |sudo sh  
 arkade get starship atuin gh croc
 ~/.arkade/bin/atuin init bash >>~/.bashrc.local
