@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
+set -euo pipefail
 git clone https://github.com/LazyVim/starter ~/.config/nvim && \
 rm -rf ~/.config/nvim/.git
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage && \
+curl -fLO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage && \
 chmod +x nvim-linux-x86_64.appimage && \
 mkdir -p ~/.local/bin && \
 mv ./nvim-linux-x86_64.appimage ~/.local/bin/nvim && \
 cat <<EOF >>~/.bashrc
-  export PATH="~/.local/bin:$PATH"
+    grep -qxF 'export PATH="$HOME/.local/bin:$PATH"' ~/.bashrc || \
+    echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
 EOF
 source ~/.bashrc
