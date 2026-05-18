@@ -9,5 +9,3 @@ mv ./nvim-linux-x86_64.appimage ~/.local/bin/nvim && \
 grep -qxF 'export PATH="$HOME/.local/bin:$PATH"' ~/.bashrc || \
 echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
-
-
