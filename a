@@ -1,15 +1,24 @@
 #!/usr/bin/env bash
+
+git clone https://github.com/LazyVim/starter ~/.config/nvim && \
+rm -rf ~/.config/nvim/.git
+curl -fLO 'https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage' && \
+chmod +x nvim-linux-x86_64.appimage && \
+mkdir -p ~/.local/bin && \
+mv ./nvim-linux-x86_64.appimage ~/.local/bin/nvim && \
+grep -qxF 'export PATH="$HOME/.local/bin:$PATH"' ~/.bashrc || \
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+
 curl https://raw.githubusercontent.com/rcaloras/bash-preexec/master/bash-preexec.sh -o ~/.bash-preexec.sh
-sudo apt update && sudo apt install bat lnav -y
+
+grep -qxF 'export PATH="$HOME/.arkade/bin:$PATH"' ~/.bashrc || \
+echo 'export PATH="$HOME/.arkade/bin:$PATH"' >> ~/.bashrc
+
 cat <<-EOF >>~/.bashrc
-	alias bat=batcat
-	export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
-	export MANROFFOPT="-c"
 	[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
 	export PATH="$HOME/.arkade/bin:$PATH"
 	source ~/.bashrc.local
 EOF
-
 
 curl -L get.arkade.dev |sudo sh  
 arkade get starship atuin gh croc
