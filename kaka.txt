@@ -1,1 +1,3 @@
-Hello World!
+#!/bin/bash
+curl -L get.arkade.dev |sh
+curl -fsSL https://cdn.coollabs.io/coolify/install.sh | sudo bash
