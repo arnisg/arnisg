@@ -1,1 +1,5 @@
-Hello World!
+#!/bin/bash
+curl -L get.arkade.dev |sh
+sudo apt update && sudo apt install lnav -y
+curl -fsSL https://cdn.coollabs.io/coolify/install.sh | sudo bash
+sudo usermod -aG docker azureuser
